@@ -12,7 +12,6 @@ iou_threshold = 0.5  # increase iou_threshold to 0.5
 # Initialize SORT with custom parameters
 mot_tracker = Sort(max_age=max_age, min_hits=min_hits, iou_threshold=iou_threshold)
 
-# [your existing code to load the model, open the video file, etc.]
 # load the model
 ie = IECore()
 
@@ -46,7 +45,7 @@ while (cap.isOpened()):
     ret, image = cap.read()
     if ret == True:
         frame_count += 1
-        # [your existing code to perform inference and get bounding boxes]
+
         resized_image = cv2.resize(image, (w, h))
         input_image = resized_image.transpose((2, 0, 1))
         input_image = np.expand_dims(input_image, 0)
@@ -77,8 +76,6 @@ while (cap.isOpened()):
             cv2.rectangle(image, (xmin, ymin), (xmax, ymax), (0, 255, 0), 2)
             cv2.putText(image, str(obj_id), (xmin, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
-        # [your existing code to write the frame to the output video file]
-
         out.write(image)
     else:
         break
@@ -92,5 +89,3 @@ print('Processed {} frames in {:.2f} seconds for an FPS of {:.2f}.'.format(frame
 cap.release()
 out.release()
 cv2.destroyAllWindows()
-
-# [your existing code to release everything and close windows]
