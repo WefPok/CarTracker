@@ -4,10 +4,9 @@ import numpy as np
 from sort.sort import Sort
 from openvino.inference_engine import IECore
 
-# Initialize SOR
-max_age = 20  # increase max_age to 5
-min_hits = 5  # increase min_hits to 5
-iou_threshold = 0.5  # increase iou_threshold to 0.5
+max_age = 20
+min_hits = 5
+iou_threshold = 0.5
 
 # Initialize SORT with custom parameters
 mot_tracker = Sort(max_age=max_age, min_hits=min_hits, iou_threshold=iou_threshold)
