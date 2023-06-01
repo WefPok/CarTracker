@@ -8,4 +8,5 @@ Setup in colab: [![Open In Colab](https://colab.research.google.com/assets/colab
 * Colab 8-15 FPS
 ![Screenshot](imgs/3.jpg)
 * Local PC with **intel core i7-9750H**
-![Screenshot](imgs/2.jpg)![Screenshot](imgs/1.jpg)
+![Screenshot](imgs/2.jpg)
+![Screenshot](imgs/1.jpg)
